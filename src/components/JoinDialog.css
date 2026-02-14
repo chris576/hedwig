@@ -1,0 +1,78 @@
+.join-info {
+  color: #666;
+  margin: 0 0 20px;
+  line-height: 1.6;
+}
+
+.join-section {
+  margin-bottom: 20px;
+}
+
+.join-section label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.join-input-group {
+  display: flex;
+  gap: 8px;
+}
+
+.join-input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.join-input:focus {
+  outline: none;
+  border-color: #4a90d9;
+}
+
+.paste-btn {
+  padding: 10px 16px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.paste-btn:hover {
+  background: #5a6268;
+}
+
+.error-message {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  color: #721c24;
+  font-size: 14px;
+}
+
+.btn-secondary {
+  padding: 10px 24px;
+  background: #e9ecef;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #dee2e6;
+}
+

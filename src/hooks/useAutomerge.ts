@@ -1,15 +1,22 @@
 import { useEffect, useState, useCallback, useRef } from 'react';
 import { Repo, DocHandle, DocumentId, isValidDocumentId } from '@automerge/automerge-repo';
 import { BroadcastChannelNetworkAdapter } from '@automerge/automerge-repo-network-broadcastchannel';
+import { BrowserWebSocketClientAdapter } from '@automerge/automerge-repo-network-websocket';
 import { IndexedDBStorageAdapter } from '@automerge/automerge-repo-storage-indexeddb';
 import { EditorDocument } from '../types/Document';
 
 let repoInstance: Repo | null = null;
 
+// Öffentlicher Automerge Sync Server
+const SYNC_SERVER_URL = 'wss://sync.automerge.org';
+
 function getRepo(): Repo {
   if (!repoInstance) {
     repoInstance = new Repo({
-      network: [new BroadcastChannelNetworkAdapter() as any],
+      network: [
+        new BroadcastChannelNetworkAdapter() as any,
+        new BrowserWebSocketClientAdapter(SYNC_SERVER_URL) as any,
+      ],
       storage: new IndexedDBStorageAdapter(),
     });
   }
